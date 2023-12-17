@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire de vote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Questionnaire de vote</h1>
+        <form action="">
+            <label for="antivirus">1- Le meilleur Antivirus pour vous est:</label>
+            <select name="antivirus" id="antivirus">
+                <option value="avira">Avira Free Security</option>
+                <option value="autre">Autre</option>
+            </select>
+            <br>
+            <label for="satisfaction">2- Votre degré de satisfaction est :</label>
+            <input type="range" name="satisfaction" id="satisfaction" min="0" max="100" value="50">
+            <span id="satisfaction-value">50%</span>
+            <br>
+            <label for="autre_antivirus">3- Avez-vous déjà utilisé un autre antivirus ?</label>
+            <div class="radio-container">
+                <input type="radio" name="autre_antivirus" id="oui" value="oui">
+                <label for="oui">Oui</label>
+                <input type="radio" name="autre_antivirus" id="non" value="non" checked>
+                <label for="non">Non</label>
+            </div>
+            <br>
+            <div class="button-container">
+                <button type="submit">Envoyer</button>
+                <button type="reset">Annuler</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        const satisfactionInput = document.getElementById('satisfaction');
+        const satisfactionValue = document.getElementById('satisfaction-value');
+
+        satisfactionInput.addEventListener('input', function() {
+            satisfactionValue.textContent = this.value + '%';
+        });
+    </script>
+</body>
+</html>
